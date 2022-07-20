@@ -58,8 +58,11 @@ Demonstrate my competence using HTML, CSS and JavaScript languages in building a
 The game aims to test the user's knowledge in 4 categories: Car, Animals, Movies and Sports.
 
 ### User Stories
-* Easily navigation
-* Easily choose quiz category.
-* see my score during the game
+* Easily navigation to the interactive quiz.
+* Clear instructions and easy-to-follow steps.
+* A simple designer and clear structure to easily navigate the site/game
+* Able to see my score during the game.
+* Able to from mobile or desktop. 
+
 ### Admin User
 
