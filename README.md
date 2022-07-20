@@ -5,35 +5,52 @@ Quiz game is an online interactive learning game to test your knowledge in 4 dif
 
 # Repository
 
-# Table of Contents
-* [UX](#ux "UX")
+## **Table of Contents**
+
+1. [UX Development](#ux-development)
     * [Project Goal](#project-goal)
-    * [User Stories](#user-stories "User Stories")
-    * [Site Owners Goals](#site-owners-goals)
-    * [User Requirements and Expectations](#user-requirements-and-expectations)
-         * [Requirements](#requirements)
-         * [Expectations](#expectations)
-     * [Design Choices](#design-choices)
-        * [Fonts](#fonts)
-        * [Icons](#icons)
-        * [Colours](#colours)
-        * [Structure](#structure)
-    * [Wireframes](#wireframes)
-    * [Features](#features)
-        * [Existing Features](#existing-features)
-        * [Features to be implemented](#features-to-be-implemented)
-    * [Technologies used](#technologies-used)
-        * [Languages](#languages)
-        * [Tools and Libraries](#tools-and-libraries)
-    * [Testing](#testing)
-        * [Layout and Content](#layout-and-content)
-        * [JavaScript](#javascript)
-        * [Unfixed Bugs](#unfixed-bugs)
-    * [Deployment](#deployment)
-    * [Credits](#credits)
+
+    * [User Stories](#user-stories)
+        * [New User](#new-user)
+        * [Returning Users](#returning-users)
+        * [Admin User](#admin-user)
+        * [Target Audience](#target-audience)
+
+    * [Design](#design)
+        * [Colour Scheme](#colour-scheme)
+        * [Typography](#typography)
+        * [Imagery](#imagery)
+        * [Site Structure](#site-structure)
+        * [Wireframes](#wireframes)
+      
+2. [Features](#features)  
+    * [Existing Features](#existing-features)
+        * [Navigation Bar](#navigation-bar)
+        * [Header](#header)
+        * [Features Section](#features-section)
+        * [About Section](#about-section)
+        * [Product Section](#collection-section)
+        * [Newsletter Section](#contact-section)
+        * [Footer](#footer)
+        
+3. [Technology Used](#technology-used)  
+    * [Language Used](#language-used)
+    * [Tools and Libraries](#tools-and-libraries)
+
+4. [Testing](#testing)
+    * [JavaScript](#javascript)
+    * [Unfixed Bugs](#unfixed-bugs)
 
 
-# Table of Contents
+5. [Deployment](#deployment)  
+  
+6. [Credits](#credits)  
+    * [Content](#content)
+    * [Media](#media)  
+
+- - -
+
+# **Table of Contents**
 
 ## UX Development
 ### Project Goal
