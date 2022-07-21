@@ -33,7 +33,7 @@ Quiz game is an online interactive learning game to test your knowledge in 4 dif
         * [Newsletter Section](#contact-section)
         * [Footer](#footer)
         
-3. [Technology Used](#technology-used)  
+3. [Technologies Used](#Technologies-Used)  
     * [Language Used](#language-used)
     * [Tools and Libraries](#tools-and-libraries)
 
@@ -84,6 +84,35 @@ For the body of the page I have used the google font Rubik.
 ### Wireframes
 
 
+## Technologies Used
+
+### Languages Used
+
+HTML, CSS, Javascript
+
+### Tools and Libraries Used
+
+* [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+
+* [Git](https://git-scm.com/) - For version control.
+
+* [Github](https://github.com/) - To save and store the files for the website.
+
+* [GitPod](https://gitpod.io/) - IDE used to create the site.
+
+* [Favicon.io](https://favicon.io/) To create favicon.
+
+* [Google Fonts](https://fonts.google.com/) - To import the fonts used on the website.
+
+* [jQuery](https://jquery.com/) - A JavaScript library.
+
+* [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
+
+* [Open Trivia DataBase](https://opentdb.com/) - API used for the trivia questions.
+
+* [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) - a google chrome extension to enable you to view JSON as raw data or parsed.
 
 ## Deployment
 
