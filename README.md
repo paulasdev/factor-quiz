@@ -3,6 +3,8 @@ Quiz game is an online interactive learning game to test your knowledge in 4 dif
 
 # Live Site
 
+https://paulasdev.github.io/quiz-game/
+
 # Repository
 
 ## **Table of Contents**
