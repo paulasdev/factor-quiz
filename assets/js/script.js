@@ -12,6 +12,8 @@ async function loadQuestion(categoryID) {
     showQuestion(data.results[0]);
 }
 
+//Function to display the questions
+
 function showQuestion(data){
     const question = {
         correctAnswer: data.correct_answer,
@@ -25,7 +27,7 @@ function showQuestion(data){
     questionRef.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
 }
 
-// loadQuestion();
+//Function to select the question by category
 
 btnCategoryRef.forEach(btn => {
     btn.addEventListener("click", (event) => {
