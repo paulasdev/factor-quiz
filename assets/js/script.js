@@ -1,14 +1,15 @@
 // https://opentdb.com/api.php?amount=10
 
 const questionRef = document.querySelector('#question');
-const optionsRef = document.querySelectorAll('.quiz-options');
+// const optionsRef = document.querySelectorAll('.quiz-options');
+const optionsRef = document.querySelector('#options');
 const btnCategoryRef = Array.from(document.querySelectorAll(".btn-categories"))
 
 async function loadQuestion(categoryID) {
     const APIUrl = `https://opentdb.com/api.php?amount=1&category=${categoryID}`;
     const result = await fetch(`${APIUrl}`);
     const data = await result.json();
-    // console.log(data.results[0]);
+   
     showQuestion(data.results[0]);
 }
 
@@ -25,9 +26,13 @@ function showQuestion(data){
     optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
  
     questionRef.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
+    optionsRef.innerHTML = `${optionsList.map((option, index) => `
+            <li> ${index + 1}. <span> ${option} </span> </li>
+        `).join('')}
+     `;
 }
 
-//Function to select the question by category
+//Function to select the question by categories
 
 btnCategoryRef.forEach(btn => {
     btn.addEventListener("click", (event) => {

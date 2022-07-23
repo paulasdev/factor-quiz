@@ -24,7 +24,7 @@ body {
 .quiz-options {
   list-style-type: none;
   margin: 1rem 0; 
-}
+ }
 
 .quiz-options li {
     border-radius: 0.5rem;
