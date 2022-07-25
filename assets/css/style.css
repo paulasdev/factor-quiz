@@ -9,9 +9,18 @@ body {
     background-color: white;
     font-family: "Rubik", sans-serif;
     min-height: 100vh;
-    color: #445361;
+    color: #18396E;
     text-align: center;
 }
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Rampart One', cursive;
+    color: #1982C4;
+    margin-bottom: 2rem;
+}
+
 
 .flex {
     display: flex;
@@ -20,11 +29,23 @@ body {
 }
 
 .quiz-area {
-    background-color: #e9edc9;
+    background-color: #F7EF5D;
     padding: 1.5rem 4rem 3rem 4rem;
+    width: 600px;
+    height: 680px;
     border-radius: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 } 
+
+.quiz-score {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 2rem;
+    font-weight: bold;
+    color: #18396E;
+}
 
 .quiz-question {
     font-size: 1.2rem;
@@ -33,12 +54,15 @@ body {
     margin-bottom: 2rem;
 }
 
-.quiz-options {
+.quiz-question .category {
+    color: #F7EF5D;
+}
+.quiz-answers {
   list-style-type: none;
   margin: 1rem 0; 
  }
 
-.quiz-options li {
+.quiz-answers li {
     border-radius: 0.5rem;
     font-weight: 600;
     margin: .7rem 0; 
@@ -47,21 +71,14 @@ body {
     border: 3px solid #1982C4;
     background-color: #1982C4;
     color: white;
-    box-shadow: 0 4px 0 0 #1982C4;
 }
 
-.quiz-options li:active,
-.quiz-options li:hover {
-    background-color:grey;
+.quiz-answers li:active,
+.quiz-answers li:hover {
+    background-color: #A0CCE7;
     color: white;
 }
 
-h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-family: 'Rampart One', cursive;
-    color: #1982C4;
-}
 
 
 .btn {
@@ -71,7 +88,8 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1.2px;
     border-radius: 1.3rem;
-    color: white;
+    word-spacing: 10px;
+  
 }
 
 .btn:focus {
@@ -137,10 +155,16 @@ h1 {
 
 /* --------- Media queries */
 
-@media (max-width: 414px) {
+@media (max-width: 678px) {
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
+    .quiz-area {
+        margin: 3rem 0;
+        width: 90%;
+        padding: 1.5rem 1rem 3rem 1rem;
+    }
+    
 }
 
