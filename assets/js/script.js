@@ -25,7 +25,6 @@ async function loadQuestion(categoryID) {
     const APIUrl = `https://opentdb.com/api.php?amount=1&category=${categoryID}`;
     const result = await fetch(`${APIUrl}`);
     const data = await result.json();
-   
     showQuestion(data.results[0]);
 }
 
@@ -49,31 +48,8 @@ function showQuestion(data){
      selectOption()
 }
 
-//Function to select answer
-function selectOption() {
-    optionsRef.querySelectorAll('li').forEach((option) => {
-        option.addEventListener('click', () => {
-            if(optionsRef.querySelector('.selected')) {
-                const activeOption = optionsRef.querySelector('.selected');
-                activeOption.classList.remove('selected');
-            }
-            option.classList.add('selected');
-        })
-    })
-}
 
-function checkAnswer() {
-    if(optionsRef.querySelector('.selected')) {
-        let selectedAnswer = optionsRef.querySelector('.selected span').
-        textContent;
-        if(selectedAnswer == correctAnswer) {
-            correctScore++;
-            resultref.innerhtml = `<p> <i class = "fas fa-check"></i>Correct Answer!</p>`;
-        } else {
-            resultref.innerHTML = `<p> <i class = "fas fa-check"></i>Incorrect Answer! <small><b>Correct Answer: </b> ${correctAnswer}</small></p>`;
-        }
-    }
-}
+//Function to select answer
 
 //Function to select the question by categories
 
