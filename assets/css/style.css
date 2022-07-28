@@ -39,8 +39,8 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-   /* border-radius: 1.5rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
 
 } 
 
@@ -112,11 +112,11 @@ h2 {
 
 
 .quiz-score {
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 2rem;
     font-weight: bold;
     color: #18396E;
+    border: 2px solid #1982C4;
 }
 
 .quiz-question {
@@ -176,12 +176,11 @@ font-size: 1.6rem;
 @media (max-width: 678px) {
 
     h1 {
-        font-size: 1.6rem;
+       text-align: center;
     }
-    .quiz-area {
-        margin: 3rem 0;
-        width: 90%;
-        padding: 1.5rem 1rem 3rem 1rem;
+
+    .comtainer {
+        width: 100%;
     }
     
 }

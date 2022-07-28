@@ -85,6 +85,7 @@ function HTMLDecode(textString) {
     return doc.documentElement.textContent;
 }
 
+//increase score function
 function checkCount() {
     askedCount++;
     setCount();
