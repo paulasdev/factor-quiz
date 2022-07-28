@@ -7,7 +7,11 @@
 
 
 body {
-    background-color: white;
+    height: 100%;
+    /* background-image: url("../images/subject-quiz.png"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-size: 62.5%;
     margin: 0;
     padding: 0;
@@ -15,13 +19,17 @@ body {
 
 }
 
+
 h1 {
     font-family: 'Rampart One', cursive;
     font-size: 5.4rem;
-    color: #1982C4;
     margin-bottom: 5rem;
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
 
 .container {
     width: 100vw;
@@ -36,8 +44,22 @@ h1 {
 
 } 
 
+
 .comtainer > * {
     width: 100%;
+}
+
+.container-game {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    max-width: 80rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+   /* border-radius: 1.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+
 }
 
 .flex-column {
@@ -108,6 +130,7 @@ h1 {
     color: #F7EF5D;
 }
 .quiz-answers {
+font-size: 1.6rem;
   list-style-type: none;
   margin: 1rem 0; 
  }
