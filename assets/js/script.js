@@ -13,6 +13,7 @@ let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
 
 function eventListeners() {
     checkAnswerRef.addEventListener('click', checkAnswer);
+    playAgainRef.addEventListener('click', restartQuiz);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,12 +28,14 @@ async function loadQuestion(categoryID) {
     const APIUrl = `https://opentdb.com/api.php?amount=1&category=${categoryID}`;
     const result = await fetch(`${APIUrl}`);
     const data = await result.json();
+    resultsref.innerHTML = "";
     showQuestion(data.results[0]);
 }
 
 //Function to display the questions and answers
 
 function showQuestion(data){
+    checkAnswerRef.disabled = false;
     correctAnswer = data.correct_answer;
     let incorrectAnswer = data.incorrect_answers;
     let optionsList = incorrectAnswer;
@@ -66,12 +69,13 @@ function checkAnswer() {
     if(optionsRef.querySelector('.selected')) {
         let selectedAnswer = optionsRef.querySelector('.selected span').
         textContent;
-        if(selectedAnswer == HTMLDecode(correctAnswer)) {
+        if(selectedAnswer.trim() == HTMLDecode(correctAnswer)) {
             correctScore++;
             resultsref.innerHTML = `<p> <i class = "fas fa-check">Correct Answer!</i> </p>`;
         } else {
             resultsref.innerHTML = `<p> <i class = "fas fa-times">Incorrect Answer!</p> <p><small><b>Correct Answer: </b>${correctAnswer}</small></i></p>`;
         }
+        checkCount();
     }
 }
 
@@ -79,6 +83,26 @@ function checkAnswer() {
 function HTMLDecode(textString) {
     let doc = new DOMParser().parseFromString(textString, "text/html");
     return doc.documentElement.textContent;
+}
+
+function checkCount() {
+    askedCount++;
+    setCount();
+    if(askedCount == totalQuestion) {
+        resultsref.innerHTML += `<p> Your score is ${correctScore}. </p>`
+        playAgainRef.style.display = "block";
+        checkAnswerRef.style.display = "none";
+
+    } else {
+        setTimeout(() => {
+            loadQuestion();
+        }, 300);
+    }
+}
+
+function setCount() {
+    totalQuestionRef.textContent = totalQuestion;
+    correctScoreRef.textContent = correctScore;
 }
 
 //Function to select the question by categories
@@ -105,3 +129,11 @@ btnCategoryRef.forEach(btn => {
     })
 })
 
+function restartQuiz() {
+    correctScore = askedCount = 0;
+    playAgainRef.style.display = "none";
+    checkAnswer.style.display = "block";
+    checkAnswer.disabled = false;
+    setCount();
+    loadQuestion();
+}
