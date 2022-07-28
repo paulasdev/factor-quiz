@@ -3,26 +3,25 @@
 const questionRef = document.querySelector('#question');
 const optionsRef = document.querySelector('#options');
 const btnCategoryRef = Array.from(document.querySelectorAll(".btn-categories"))
-const correctScoreRef = document.getElementById('correct-score');
-const totalQuestionRef = document.getElementById('total-question');
-const checkAnswerRef = document.getElementById('check-answer');
-const playAgainRef = document.getElementById('play-again');
-const resultsref = document.getElementById('result');
+const correctScoreRef = document.querySelector('#correct-score');
+const totalQuestionRef = document.querySelector('#total-question');
+const checkAnswerRef = document.querySelector('#check-answer');
+const playAgainRef = document.querySelector('#play-again');
+const resultsref = document.querySelector('#result');
+const gameSectionRef = document.querySelector('#game')
+const indexSectionRef = document.querySelector('#index')
 
-let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
+let correctAnswer = ""
+let correctScore = "" 
+let askedCount = 0;
+let totalQuestion = 10;
 
 function eventListeners() {
     checkAnswerRef.addEventListener('click', checkAnswer);
     playAgainRef.addEventListener('click', restartQuiz);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadQuestion();
-    eventListeners();
-    totalQuestionRef.textContent = totalQuestion;
-    correctScoreRef.textContent = correctScore;
 
-});
 
 async function loadQuestion(categoryID) {
     const APIUrl = `https://opentdb.com/api.php?amount=1&category=${categoryID}`;
@@ -53,14 +52,14 @@ function showQuestion(data){
 function selectOption() {
     optionsRef.querySelectorAll('li').forEach((option) => {
         option.addEventListener('click', () => {
-          if(optionsRef.querySelector('.selected')) {
-            const activeOption = optionsRef.querySelector('.selected');
+          if(selectedOptionsRef) {
+            const activeOption = selectedOptionsRef;
             activeOption.classList.remove('selected');
           }
           option.classList.add('selected');
         })
     })
-console.log(correctAnswer);
+console.log(answer.correctAnswer);
 }
 
 //check answer
@@ -85,11 +84,12 @@ function HTMLDecode(textString) {
     return doc.documentElement.textContent;
 }
 
+
 //increase score function
 function checkCount() {
     askedCount++;
     setCount();
-    if(askedCount == totalQuestion) {
+    if(config.questionAsked === config.totalQuestion) {
         resultsref.innerHTML += `<p> Your score is ${correctScore}. </p>`
         playAgainRef.style.display = "block";
         checkAnswerRef.style.display = "none";
@@ -103,7 +103,7 @@ function checkCount() {
 
 function setCount() {
     totalQuestionRef.textContent = totalQuestion;
-    correctScoreRef.textContent = correctScore;
+    correctScoreRef.textContent = config.score;
 }
 
 //Function to select the question by categories
@@ -127,14 +127,34 @@ btnCategoryRef.forEach(btn => {
             default:
                 break;
         }
+        gameSectionRef.classList.add("show")
+        gameSectionRef.classList.remove("hidden")
+        indexSectionRef.classList.add("hidden")
     })
 })
 
+/**
+ * Restarts the score and the game.
+ */
 function restartQuiz() {
-    correctScore = askedCount = 0;
+    config.score = 0
+    config.questionsAsked = 0;
     playAgainRef.style.display = "none";
-    checkAnswer.style.display = "block";
-    checkAnswer.disabled = false;
+    checkAnsweRef.style.display = "block";
+    checkAnswerRef.disabled = false;
     setCount();
     loadQuestion();
+    gameSectionRef.classList.add("hidden")
+    gameSectionRef.classList.remove("show")
+    indexSectionRef.classList.remove("hidden")
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestion();
+    eventListeners();
+    totalQuestionRef.innerHTML = config.totalQuestion;
+    correctScoreRef.innerHTML = config.score;
+
+});
+
+restartQuiz()

@@ -185,3 +185,12 @@ font-size: 1.6rem;
     
 }
 
+#game {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}

@@ -18,30 +18,56 @@
 
 <body>
 
-  
     <div class="container">
-        <div id="home" class="flex-center flex-column">
-            <h1>Subject Quiz</h1>
-            <h2>What topic are you interested in testing your knowledge?</h2>
-            <a class="btn btn-categories" href="/game.html" id="films">
-                <i class="fas fa-film"></i> Films
-            </a>
-            <a class="btn btn-categories" href="/game.html" id="animals">
-                <i class="fa-solid fa-dog"></i> Animals
-            </a>
-            <a class="btn btn-categories" href="/game.html" id="cars">
-                <i class="fa-solid fa-car"></i> Cars
-            </a>
-            <a class="btn btn-categories" href="/game.html" id="sports">
-                <i class="fa-solid fa-person-running"></i> Sports
-            </a>
-        </div>
+        <section id="index">
+            <div class="flex-center flex-column">
+                <h1>Subject Quiz</h1>
+                <h2>What topic are you interested in testing your knowledge?</h2>
+                <a class="btn btn-categories" href="#" id="films">
+                    <i class="fas fa-film"></i> Films
+                </a>
+                <a class="btn btn-categories" href="#" id="animals">
+                    <i class="fa-solid fa-dog"></i> Animals
+                </a>
+                <a class="btn btn-categories" href="#" id="cars">
+                    <i class="fa-solid fa-car"></i> Cars
+                </a>
+                <a class="btn btn-categories" href="#" id="sports">
+                    <i class="fa-solid fa-person-running"></i> Sports
+                </a>
+            </div>
 
+        </section>
+        <section id="game">
+            <div class="flex-center flex-column">
+                <h1>Subject Quiz</h1>
+                
+                <div class="quiz-score">
+                    <span id="correct-score"></span>/<span id="total-question"></span>
+                </div>
+        
+                <div class="question-area">
+                    <h2 class="quiz-question" id="question">
+                        <br> <span class="category"></span>
+                    </h2>
+                    <ul class="quiz-answers" id="options">
+                   
+                    </ul>
+                    <div id="result">
+                        <!-- results here -->
+                    </div>
+                </div>
+                <div class="quiz-foot">
+                    <button type="btn" id="play-again">Play Again!</button>
+                    <button type="btn" id="check-answer">Check</button>
+                </div>
+            </div>
+        </section>
     </div>
 
 
-       <!-- quiz app js -->
-       <script src="assets/js/script.js"></script>
+    <!-- quiz app js -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
