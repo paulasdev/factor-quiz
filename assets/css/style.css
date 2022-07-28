@@ -127,7 +127,7 @@ h2 {
 }
 
 .quiz-question .category {
-    color: #F7EF5D;
+    color: white;
 }
 .quiz-answers {
 font-size: 1.6rem;
@@ -166,7 +166,6 @@ font-size: 1.6rem;
     line-height: 30px;
     margin-right: .5rem;
     margin-bottom: .5rem;
-    background-color: red;
 }
 
 
