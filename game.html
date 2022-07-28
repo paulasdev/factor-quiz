@@ -15,11 +15,11 @@
     <title>Quiz Game</title>
 </head>
 
-<body class="flex">
+<body>
 
-    <div class="quiz-area">
+    <div class= "container">
         <h1>Quiz Game</h1>
-        <div>
+        
             <a class="btn btn-categories" id="films">
                 <i class="fas fa-film"></i> Film
             </a>
@@ -32,7 +32,7 @@
             <a class="btn btn-categories" id="sports">
                 <i class="fa-solid fa-person-running"></i> Sports
             </a>
-        </div>
+        
         <div class="quiz-score">
             <span id="correct-score"></span>/<span id="total-question"></span>
         </div>
@@ -42,13 +42,15 @@
                 <br> <span class="category"></span>
             </h2>
             <ul class="quiz-answers" id="options">
-
+           
             </ul>
             <div id="result">
+                <!-- results here -->
             </div>
         </div>
         <div class="quiz-foot">
-            <button type="button" id="play-again">Play Again!</button>
+            <button type="btn" id="play-again">Play Again!</button>
+            <button type="btn" id="check-answer">Check!</button>
         </div>
     </div>
     
