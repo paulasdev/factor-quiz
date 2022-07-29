@@ -168,7 +168,12 @@ font-size: 1.6rem;
     margin-bottom: .5rem;
 }
 
-
+.hidden {
+    display: none;
+} 
+.show {
+    display: block;
+}
 
 
 /* --------- Media queries */
@@ -185,9 +190,3 @@ font-size: 1.6rem;
     
 }
 
-.hidden {
-    display: none;
-} 
-.show {
-    display: block;
-}

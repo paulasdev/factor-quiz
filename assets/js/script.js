@@ -12,6 +12,7 @@ const gameSectionRef = document.querySelector('#game')
 const indexSectionRef = document.querySelector('#index')
 const selectedOptionsRef = optionsRef.querySelector('.selected')
 
+
 let correctAnswers = ""
 const answers = {}
 const config = {
@@ -35,21 +36,23 @@ async function loadQuestion(categoryID) {
     showQuestion(data.results[0]);
 }
 
-//Function to display the questions and answers
-
+/**
+ * Function to display the questions and answers
+**/
 function showQuestion(data) {
-    answers.incorrectAnswers = data.incorrect_answers;
-    answers.correctAnswers = data.correctAnswers
-    checkAnswerRef.disabled = false;
-    optionsList.splice(Math.floor(Math.random() * (answers.incorrectAnswers.length + 1)), 0, answers.correctAnswers);
-
-
-    questionRef.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
+    correctAnswer = data.correct_answer;
+    let incorrectAnswer = data.incorrect_answers;
+    // checkAnswerRef.disabled = false;
+    let optionsList = incorrectAnswer;
+    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
+    console.log(optionsList);
+    console.log(correctAnswer);
+    questionRef.innerHTML = `${data.question} <br> <span class = ".btn-categories"> ${data.category} </span>`;
     optionsRef.innerHTML = `${optionsList.map((option, index) => `
              <li> ${index + 1}. <span> ${option} </span> </li>
-         `).join('')}
-      `;
-    selectOption()
+        `).join('')}
+       `;
+     selectOption()
 }
 //Function to select answer
 function selectOption() {
@@ -70,14 +73,14 @@ function checkAnswer() {
     checkAnswerRef.disbled = true;
     if (selectedOptionsRef) {
         let selectedAnswers = optionsRef.querySelector('.selected span').innerHTML;
-        if (selectedAnswers.trim() === answers.correctAnswers) {
+        if (selectedAnswers.trim() === correct_answers) {
             config.correctScore++;
             resultsref.innerHTML = `<p> <i class = "fas fa-check">Correct Answer!</i> </p>`;
         } else {
             resultsref.innerHTML = `
             <p> 
             <i class = "fas fa-times">Incorrect Answer!
-            <small><b>Correct Answer: </b>${answers.correctAnswers}</small>
+            <small><b>Correct Answer: </b>${correctAnswers}</small>
             </i>
             </p>`;
         }
