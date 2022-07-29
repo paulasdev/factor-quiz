@@ -10,11 +10,15 @@ const playAgainRef = document.querySelector('#play-again');
 const resultsref = document.querySelector('#result');
 const gameSectionRef = document.querySelector('#game')
 const indexSectionRef = document.querySelector('#index')
+const selectedOptionsRef = optionsRef.querySelector('.selected')
 
-let correctAnswer = ""
-let correctScore = "" 
-let askedCount = 0;
-let totalQuestion = 10;
+let correctAnswers = ""
+const answers = {}
+const config = {
+    score: 0,
+    questionsAsked: 0,
+    totalQuestion: 10
+}
 
 function eventListeners() {
     checkAnswerRef.addEventListener('click', checkAnswer);
@@ -33,63 +37,62 @@ async function loadQuestion(categoryID) {
 
 //Function to display the questions and answers
 
-function showQuestion(data){
+function showQuestion(data) {
+    answers.incorrectAnswers = data.incorrect_answers;
+    answers.correctAnswers = data.correctAnswers
     checkAnswerRef.disabled = false;
-    correctAnswer = data.correct_answer;
-    let incorrectAnswer = data.incorrect_answers;
-    let optionsList = incorrectAnswer;
-    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
-  
+    optionsList.splice(Math.floor(Math.random() * (answers.incorrectAnswers.length + 1)), 0, answers.correctAnswers);
+
 
     questionRef.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
     optionsRef.innerHTML = `${optionsList.map((option, index) => `
              <li> ${index + 1}. <span> ${option} </span> </li>
          `).join('')}
       `;
-      selectOption()
+    selectOption()
 }
 //Function to select answer
 function selectOption() {
     optionsRef.querySelectorAll('li').forEach((option) => {
         option.addEventListener('click', () => {
-          if(selectedOptionsRef) {
-            const activeOption = selectedOptionsRef;
-            activeOption.classList.remove('selected');
-          }
-          option.classList.add('selected');
+            if (selectedOptionsRef) {
+                const activeOption = selectedOptionsRef;
+                activeOption.classList.remove('selected');
+            }
+            option.classList.add('selected');
         })
     })
-console.log(answer.correctAnswer);
+    console.log(answers.correctAnswers);
 }
 
 //check answer
 function checkAnswer() {
     checkAnswerRef.disbled = true;
-    if(optionsRef.querySelector('.selected')) {
-        let selectedAnswer = optionsRef.querySelector('.selected span').
-        textContent;
-        if(selectedAnswer.trim() == HTMLDecode(correctAnswer)) {
-            correctScore++;
+    if (selectedOptionsRef) {
+        let selectedAnswers = optionsRef.querySelector('.selected span').innerHTML;
+        if (selectedAnswers.trim() === answers.correctAnswers) {
+            config.correctScore++;
             resultsref.innerHTML = `<p> <i class = "fas fa-check">Correct Answer!</i> </p>`;
         } else {
-            resultsref.innerHTML = `<p> <i class = "fas fa-times">Incorrect Answer!</p> <p><small><b>Correct Answer: </b>${correctAnswer}</small></i></p>`;
+            resultsref.innerHTML = `
+            <p> 
+            <i class = "fas fa-times">Incorrect Answer!
+            <small><b>Correct Answer: </b>${answers.correctAnswers}</small>
+            </i>
+            </p>`;
         }
         checkCount();
     }
 }
 
-//convert html entities into normal text of correct answer id there is any
-function HTMLDecode(textString) {
-    let doc = new DOMParser().parseFromString(textString, "text/html");
-    return doc.documentElement.textContent;
-}
+
 
 
 //increase score function
 function checkCount() {
-    askedCount++;
+    setCount++;
     setCount();
-    if(config.questionAsked === config.totalQuestion) {
+    if (config.questionAsked === config.totalQuestion) {
         resultsref.innerHTML += `<p> Your score is ${correctScore}. </p>`
         playAgainRef.style.display = "block";
         checkAnswerRef.style.display = "none";
@@ -102,7 +105,7 @@ function checkCount() {
 }
 
 function setCount() {
-    totalQuestionRef.textContent = totalQuestion;
+    totalQuestionRef.textContent = loadQuestion;
     correctScoreRef.textContent = config.score;
 }
 
@@ -127,9 +130,11 @@ btnCategoryRef.forEach(btn => {
             default:
                 break;
         }
+        
         gameSectionRef.classList.add("show")
         gameSectionRef.classList.remove("hidden")
         indexSectionRef.classList.add("hidden")
+        indexSectionRef.classList.remove("show")
     })
 })
 
@@ -140,7 +145,7 @@ function restartQuiz() {
     config.score = 0
     config.questionsAsked = 0;
     playAgainRef.style.display = "none";
-    checkAnsweRef.style.display = "block";
+    checkAnswerRef.style.display = "block";
     checkAnswerRef.disabled = false;
     setCount();
     loadQuestion();
@@ -158,3 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 restartQuiz()
+
+
+//convert html entities into normal text of correct answer id there is any
+// function HTMLDecode(textString) {
+//     let doc = new DOMParser().parseFromString(textString, "text/html");
+//     return doc.documentElement.textContent;
+// }
