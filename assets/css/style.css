@@ -175,7 +175,38 @@ font-size: 1.6rem;
     display: block;
 }
 
+.selected{
+    background-color: #1982C4;
+    color: #a2d2ff ;
+    border-color: #A0CCE7;
+    box-shadow: 0 4px 0 0 #bbbbbb!important;
+}
 
+.quiz-foot a{
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;    
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    background-color: grey;
+    color:#18396E;
+    letter-spacing: 2px;
+    /* transition: var(--transition); */
+    box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-foot button:hover{
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 0 0 #a7a7a7;
+}
+.quiz-foot button:active{
+    transform: scale(0.95);
+}
 /* --------- Media queries */
 
 @media (max-width: 678px) {
