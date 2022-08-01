@@ -13,7 +13,7 @@ const gameSectionRef = document.querySelector('#game')
 const indexSectionRef = document.querySelector('#index')
 
 
-let question
+let catNumber = 0
 let correctAnswer = "",
     score = 0,
     questionCounter = 0,
@@ -44,26 +44,29 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * Select the questions by categories
  **/
-
 btnCategoryRef.forEach(btn => {
     btn.addEventListener("click", (event) => {
         switch (event.target.id) {
             case "films":
-                loadQuestion(11)
+                catNumber = 11
+                loadQuestion(catNumber)
                 break;
             case "animals":
-                loadQuestion(27)
+                catNumber = 27
+                loadQuestion(catNumber)
                 break;
             case "cars":
-                loadQuestion(28)
+                catNumber = 28
+                loadQuestion(catNumber)
                 break;
             case "sports":
-                loadQuestion(21)
+                catNumber = 21
+                loadQuestion(catNumber)
                 break;
-
             default:
                 break;
         }
+
 
         gameSectionRef.classList.add("show")
         gameSectionRef.classList.remove("hidden")
@@ -71,6 +74,8 @@ btnCategoryRef.forEach(btn => {
         indexSectionRef.classList.remove("show")
     })
 })
+
+
 
 /**
  * Display questions and answers 
@@ -147,11 +152,13 @@ function checkCounter() {
        
     } else {
         setTimeout(() => {
-            loadQuestion(); 
+            loadQuestion(catNumber); 
         }, 1000);
     }
 }
 
+/* Get new question.
+*/
 function setCounter() {
     totalQuestionRef.textContent = totalQuestion;
     correctScoreRef.textContent = score;
@@ -166,7 +173,7 @@ function restartQuiz() {
     btnCheckAnswer.style.display = "block";
     btnCheckAnswer.disabled = false;
     setCounter();
-    loadQuestion();
+    loadQuestion(catNumber);
 
     gameSectionRef.classList.add("hidden")
     gameSectionRef.classList.remove("show")
