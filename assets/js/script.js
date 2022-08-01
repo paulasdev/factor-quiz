@@ -132,8 +132,6 @@ function checkAnswer() {
     
     }
 
-
-
 /**
  * Convert html entities into normal text of correct answer if there is any
  */
