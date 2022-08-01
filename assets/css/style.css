@@ -190,14 +190,11 @@ font-size: 1.6rem;
     font-size: 1.2rem;
     font-weight: 600;
     padding: .5rem 1rem;    
-    margin: 0 auto 0 auto;
     text-transform: uppercase;
     cursor: pointer;
-    display: block;
     background-color: grey;
-    color:#18396E;
+    color:#bbbbbb;
     letter-spacing: 2px;
-    /* transition: var(--transition); */
     box-shadow: 0 4px 0 0 #bbbbbb;
 }
 .quiz-foot button:hover{
@@ -211,13 +208,17 @@ font-size: 1.6rem;
 
 @media (max-width: 678px) {
 
-    h1 {
-       text-align: center;
-    }
+    /* h1 {
+       font-size: 2.1rem;
+    } */
 
     .comtainer {
         width: 100%;
+        text-align: center;
     }
     
+    .quiz-foot a {
+        font-size: 1rem;
+    }
 }
 
