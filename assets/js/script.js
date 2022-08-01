@@ -81,7 +81,7 @@ btnCategoryRef.forEach(btn => {
  * Display questions and answers 
  */
 function showQuestion(data) {
-    btnCheckAnswer.disabled = true;
+    btnCheckAnswer.disabled = false;
     correctAnswer = data.correct_answer;
     let incorrectAnswer = data.incorrect_answers;
     let optionsList = incorrectAnswer;
@@ -155,8 +155,6 @@ function checkCounter() {
     }
 }
 
-/* Get new question.
-*/
 function setCounter() {
     totalQuestionRef.textContent = totalQuestion;
     correctScoreRef.textContent = score;
