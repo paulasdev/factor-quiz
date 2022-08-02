@@ -115,7 +115,7 @@ function selectOption() {
  * Check the correct or incorrect answer
  */
 function checkAnswer() {
-    questionCounter++;
+    // questionCounter++;
     btnCheckAnswer.disabled = true;
     if (optionsRef.querySelector('.selected')) {
         let selectedAnswer = optionsRef.querySelector('.selected span').textContent;
@@ -129,7 +129,10 @@ function checkAnswer() {
             </b>${correctAnswer}</small>`;
         }
         checkCounter();
-    } 
+    } else {
+        resultsref.innerHTML = `<p><i class = "fas fa-question"></i>Please select an option! </p>`
+        btnCheckAnswer.disabled = false;
+    }
     
     }
 
@@ -142,27 +145,29 @@ function HTMLDecode(textString) {
 }
 
 /**
- * Get new question.
+ * Get new question
  */
 function checkCounter() {
-    // questionCounter++;
+    questionCounter++;
     setCounter();
     if (questionCounter == totalQuestion) {
-       
+       resultsref.innerHTML = `<p> Your score is ${score}</p>`;
+       btnPlayAgain.style.display = "block";
+       btnCheckAnswer.style.display = "none";
     } else {
         setTimeout(() => {
             loadQuestion(catNumber); 
-        }, 1000);
+        }, 300);
     }
 }
 
 function setCounter() {
-    totalQuestionRef.textContent = questionCounter;
+    totalQuestionRef.textContent = totalQuestion;
     correctScoreRef.textContent = score;
 }
 
 /**
- * Restarts the score and the game.
+ * Restarts the score and the game
  */
 function restartQuiz() {
     score = questionCounter = 0;
@@ -170,7 +175,7 @@ function restartQuiz() {
     btnCheckAnswer.style.display = "block";
     btnCheckAnswer.disabled = false;
     setCounter();
-    loadQuestion();
+    loadQuestion(catNumber);
 
     gameSectionRef.classList.add("hidden")
     gameSectionRef.classList.remove("show")
