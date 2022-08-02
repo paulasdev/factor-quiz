@@ -115,6 +115,7 @@ function selectOption() {
  * Check the correct or incorrect answer
  */
 function checkAnswer() {
+    questionCounter++;
     btnCheckAnswer.disabled = true;
     if (optionsRef.querySelector('.selected')) {
         let selectedAnswer = optionsRef.querySelector('.selected span').textContent;
@@ -144,7 +145,7 @@ function HTMLDecode(textString) {
  * Get new question.
  */
 function checkCounter() {
-    questionCounter++;
+    // questionCounter++;
     setCounter();
     if (questionCounter == totalQuestion) {
        
@@ -156,7 +157,7 @@ function checkCounter() {
 }
 
 function setCounter() {
-    totalQuestionRef.textContent = totalQuestion;
+    totalQuestionRef.textContent = questionCounter;
     correctScoreRef.textContent = score;
 }
 
@@ -169,7 +170,7 @@ function restartQuiz() {
     btnCheckAnswer.style.display = "block";
     btnCheckAnswer.disabled = false;
     setCounter();
-    loadQuestion(catNumber);
+    loadQuestion();
 
     gameSectionRef.classList.add("hidden")
     gameSectionRef.classList.remove("show")
