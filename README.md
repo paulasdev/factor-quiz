@@ -1,9 +1,10 @@
-# Quiz Games
-Quiz game is an online interactive learning game to test your knowledge in 4 different categories.
+# Quiz Factor
 
-# Live Site
+![Quiz Factor on different screen sizes ](assets/images/quizfactor.png)
 
-https://paulasdev.github.io/quiz-game/
+Quiz Factor is an online interactive learning game to test your knowledge in 4 different categories.
+
+Visit the deployed site: [Quiz Factor](https://paulasdev.github.io/factor-quiz/)
 
 # Repository
 
@@ -13,10 +14,9 @@ https://paulasdev.github.io/quiz-game/
     * [Project Goal](#project-goal)
 
     * [User Stories](#user-stories)
-        * [New User](#new-user)
-        * [Returning Users](#returning-users)
-        * [Admin User](#admin-user)
-        * [Target Audience](#target-audience)
+        * [First Time Visitor Goals](#first-time-visitor-goals)
+        * [Returning Visitor Goals](#returning-visitors-goals)
+        * [Site Owners Goals](#site-owners-goals)
 
     * [Design](#design)
         * [Colour Scheme](#colour-scheme)
@@ -59,19 +59,35 @@ https://paulasdev.github.io/quiz-game/
 Demonstrate my competence using HTML, CSS and JavaScript languages in building a responsive website.
 The game aims to test the user's knowledge in 4 categories: Car, Animals, Movies and Sports.
 
-### User Stories
+---
+## User Stories
+#### First Time Visitor Goals
+
 * Easily navigation to the interactive quiz.
 * Clear instructions and easy-to-follow steps.
 * A simple designer and clear structure to easily navigate the site/game
 * Able to see my score during the game.
 * Able to from mobile or desktop. 
+* Able to Restarts the score and the game.
 
-### Admin User
+#### Returning Visitor Goals
 
+* Able to choose a category to keep improving the knowledge.
+
+### Site Owners Goals
+
+* Create an easily navigated site using a single page format.
+* Responsive design, based on mobile-first.
+* Use single-page layout.
+* Give a positive user experience through colours and layout.
+
+
+---
 
 ## Design
 ### Colour Scheme
-
+The colour scheme was based on the background image - A newspaper. I wanted to keep the colour scheme that best matched the background image and kept it simple for users to see.
+![Quiz Factor colour scheme](assets/images/colourscheme.png)
 
 ### Typography
 Google Fonts was used to import the chosen fonts for use in the site.
@@ -79,7 +95,7 @@ For the page title I have used the google font Rampart One.
 For the body of the page I have used the google font Rubik.
 
 ### Imagery
-
+The newspaper as the image used as the background image was based on "getting" knowledge on different subjects.
 
 ### Site Structure
  
