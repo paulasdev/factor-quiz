@@ -4,7 +4,7 @@
 
 Quiz Factor is an online interactive learning game to test your knowledge in 4 different categories.
 
-Visit the deployed site: [Quiz Factor](https://paulasdev.github.io/factor-quiz/)
+Visit the deployed site: [Quiz Factor](https://paulasdev.github.io/quiz-factor/)
 
 # Repository
 
