@@ -98,9 +98,35 @@ For the body of the page I have used the google font Rubik.
 The newspaper as the image used as the background image was based on "getting" knowledge on different subjects.
 
 ### Site Structure
+The header is at the top of the two sections.
  
-### Wireframes
+![title](assets/images/title.png)
 
+On the home page there are 4 buttons with different categories: movies, animals, cars and sports, which is the access to start the game, where the user must choose one of the categories that he wants to test his knowledge.
+
+![category](assets/images/category.png)
+
+In the second section under the header there is a score with " / " (slash) to indicate on the left side the number of correct answers and on the right side the number of questions.
+
+![scores](assets/images/scores.png)
+
+The quiz area is divided into questions and answers according to the category the user has chosen
+
+![quiz](assets/images/questionarea.png.png)
+
+The user is informed in case of no selected answer.
+
+![select](assets/images/selectoption.png)
+
+When the user completes the 10 questions answered, their score is displayed on the screen and the play again! button is enabled.
+
+![play again](assets/images/playagain.png)
+
+### Wireframes
+ I have used Balsamiq to create wireframes for mobile, tablet and desktop.
+![mobile](assets/images/mobile.png)
+![tablet](assets/images/tablet.png)
+![desktop](assets/images/desktop.png)
 
 ## Technologies Used
 
@@ -128,9 +154,13 @@ HTML, CSS, Javascript
 
 * [Am I Responsive?](http://ami.responsivedesign.is/) To show the website image on a range of devices.
 
+* [Favicon.io](https://favicon.io/) To create favicon.
+
 * [Open Trivia DataBase](https://opentdb.com/) - API used for the trivia questions.
 
 * [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) - a google chrome extension to enable you to view JSON as raw data or parsed.
+
+* [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
 ## Deployment
 
