@@ -110,7 +110,7 @@ In the second section under the header there is a score with " / " (slash) to in
 
 ![scores](assets/images/scores.png)
 
-The quiz area is divided into questions and answers according to the category the user has chosen
+The quiz area is divided into questions and answers according to the category the user has chosen.
 
 ![quiz](assets/images/questionarea.png.png)
 
@@ -162,6 +162,34 @@ HTML, CSS, Javascript
 
 * [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
+## Testing
+
+### W3C Validator
+    W3C was used to validate the HTML and CSS on all pages of the website. 
+
+    index.html - Passed, no errors found.
+    style.css - Passed, no errors found.
+
+### Litgthouse 
+    I Used Lighthouse in Chrome Developer Tools to test each of the pages for: performance, accessibility, best practices and SEO of the website.    
+
+![Lighthouse](assets/images/Ligthouse.png)
+    
+
+### JavaScript
+
+Without a doubt, this project was very challenging.
+
+I had initial difficulties to display the questions only of the selected categories and after the answers were already selected I could not think of the solution to go to the next question of the selected category.
+
+I fought for a long time with myself for not tagging the selection class and then that hampered my thoughts for a while.
+
+I didn't think about giving up but I thought I wouldn't be able to deliver in time. That's when I had amazing help from Martin who not only helped me to solve the problem but he gave me tips to improve my code.
+
+I want to improve some things like the score, include instructions.
+
+### Unfixed Bug
+
 ## Deployment
 
 ### How to fork:
@@ -179,3 +207,11 @@ To clone the repository:
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+## Credits
+For code inspiration, help and advice.
+
+* Simen Daehlin
+* Martin McInerney
+
+
