@@ -162,6 +162,8 @@ HTML, CSS, Javascript
 
 * [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
+* [Pexels](https://www.pexels.com/) - free stock photos
+
 ## Testing
 
 ### W3C Validator
@@ -214,4 +216,6 @@ For code inspiration, help and advice.
 * Simen Daehlin
 * Martin McInerney
 
+## Media
+The background image were taken from Pexels.com
 
