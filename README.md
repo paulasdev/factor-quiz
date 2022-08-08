@@ -112,7 +112,7 @@ In the second section under the header there is a score with " / " (slash) to in
 
 The quiz area is divided into questions and answers according to the category the user has chosen.
 
-![quiz](assets/images/questionarea.png.png)
+![quiz](assets/images/questionarea.png)
 
 The user is informed in case of no selected answer.
 
